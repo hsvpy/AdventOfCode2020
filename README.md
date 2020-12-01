@@ -24,6 +24,7 @@ This year we're doing prizes! Here are the rules to be eligible to win a prize:
 6. Players must use Python for the challenges completed. (We're Hsv.py after all!)
 7. The player with the most solved challenges by January 10th will receive the first place prize: the newly published Al Sweigart book, "Beyond the Basic Stuff with Python: Best Practices for Writing Clean Code". All other prizes will be great surprises! :)
 8. If you have any questions about the rules, please send Ashley a Meetup.com message or send us an e-mail at Huntsville.py@gmail.com
+9. Winners will be limited to the top 10. More challenges completed successfully and faster will factor into who wins in the case of close competition.
 
 <h3>About Advent of Code</h3>
 Advent of Code is a project created by Eric Wastl (@ericwastl); each year during the month of December, puzzles are listed on the challenge website https://adventofcode.com/ . A new puzzle is listed each day of the month and requires code to solve (actually any language will work--but we especially love Python!). Puzzles are created for a variety of skill levels and are perfect for challenging yourself, others, or collaborating together to solve.
