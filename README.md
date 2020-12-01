@@ -23,7 +23,7 @@ This year we're doing prizes! Here are the rules to be eligible to win a prize:
 
 1. Hsv.py's Advent 2020's timeline runs through January 10, 2021, for any submissions. Winners will be notified that week.
 2. Players must be a member of the Hsv.py Meetup group and have a valid e-mail connected to their account for notification purposes. Unclaimed prizes will time-out after 30 days, so make sure we can contact you!
-3. Players must join the Hsv.py leadership board on https://adventofcode.com/ (our leadership board code is: 135149-377bf0f5) and must be identifiable between Meetup and the leadership board and GitHub (so we can tell who is who).
+3. Players must join the Hsv.py leadership board on https://adventofcode.com/ (our leadership board code is: `135149-377bf0f5`) and must be identifiable between Meetup and the leadership board and GitHub (so we can tell who is who).
 4. Players must complete any 15 challenges from the 2020 year (any 15, does not have to be sequential) and at least 5 of these challenges must have both stars completed. The more challenges you complete, the better your placement within the group.
 5. Players must publish their code in the Hsv.py repo for the challenges completed. Our repo is located [on GitHub](https://github.com/hsvpy/AdventOfCode2020).
 6. Players must use Python for the challenges completed. (We're Hsv.py after all!)
