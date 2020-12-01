@@ -9,9 +9,11 @@ Feel free to fork this repo and add your code to your fork. Please save any shar
 guidoVanRossum_day03part2.py
 
 <h3>How to get help</h3>
-You can always e-mail us at Huntsville.py@gmail.com
+You can always e-mail us at Huntsville.py@gmail.com.
+
 If you have trouble using the Git repository or need Git help, message Ashley directly on Meetup. She likes to brag about her Git abilities and enjoys the challenge.
-If you need help getting started or with a particular puzzle, you can check out our [#hsv-dot-py channel](https://tech256.slack.com/archives/C495LAMS7) on tech 256 [sign up here](https://tech256.slack.com), add a message to our Meetup.com discussion, e-mail us at huntsville.py@gmail.com, or send a Meetup message and we'll help direct you! (Also, though not directly affiliated with our group, there are an active Reddit r/adventofcode and a general [Advent of Code Slack channel](https://tech256.slack.com/archives/CE8MV0GVC) on tech256.)
+
+If you need help getting started or with a particular puzzle, you can check out our [hsv-dot-py channel](https://tech256.slack.com/archives/C495LAMS7) on tech256 ([sign up here](https://tech256.slack.com/)), add a message to our Meetup.com discussion, e-mail us at huntsville.py@gmail.com, or send a Meetup message and we'll help direct you! (Also, though not directly affiliated with our group, there are an active Reddit r/adventofcode and a general [Advent of Code Slack channel](https://tech256.slack.com/archives/CE8MV0GVC) on tech256.)
 
 <h3>Hsv.py's 2020 Advent Challenges</h3>
 This year we're doing prizes! Here are the rules to be eligible to win a prize:
