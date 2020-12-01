@@ -5,7 +5,7 @@ Hsv.py Advent of Code 2020 Repository: Share code, tips, notes, and other useful
 This repository is meant for sharing code, tricks, tips, and anything that would be beneficial to others learning and improving their python skills. All ages and coding skill levels are invited to participate! Enjoy the challenge and remember to have fun!
 
 <h3>How to contribute to this repo</h3>
-If you'd like to share code, please add it in the appropriate day's folder with your name (or nickname--something that can be used to identify you through the meetup) and the challenge day #. If your code pertains to a specific part of the challenge (for example, the second star on day 3), please include the part in the filename. For example: <br>
+Feel free to fork this repo and add your code to your fork. Please save any shared files with your name (or nickname--something that can be used to identify you through the meetup) and the challenge day #. If your code pertains to a specific part of the challenge (for example, the second star on day 3), please include the part in the filename. For example: <br>
 guidoVanRossum_day3part2.py
 
 <h3>How to get help</h3>
