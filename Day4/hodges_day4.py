@@ -19,25 +19,49 @@ class Passport:
 
     def is_valid_years(self) -> bool:
         def four_digits(year: str) -> bool:
-            return re.search('^\d\d\d\d$', year) != None
+            return re.search(r'^\d{4}$', year) != None
         date_validation = [
-            {'year': self.byr, 'start': 1920, 'end': 2020},
+            {'year': self.byr, 'start': 1920, 'end': 2002},
             {'year': self.iyr, 'start': 2010, 'end': 2020},
             {'year': self.eyr, 'start': 2020, 'end': 2030}
         ]
-        for date_field in date_validation:
+        for date_field in date_validation:            
             if not four_digits(date_field['year']):
-                print("4 digits")
                 return False 
-            if int(date_field['year']) < date_field['start'] or int(date_field['year']) > date_field['end']:
-                print("Outside")
+            year = int(date_field['year'])
+            if year < date_field['start'] or year > date_field['end']:
                 return False
-            print("Good")
         return True
+    
+    def is_valid_height(self) -> bool:
+        height = self.hgt
+        try:
+            if match := re.search(r'(\d*)cm$', height):
+                return (150 <= int(match.group(1)) <= 193)
+            elif match := re.search(r'(\d*)in$', height):
+                return (59 <= int(match.group(1)) <= 76)
+            else:
+                return False
+        except ValueError:
+            return False
 
+    def is_valid_hair(self) -> bool:
+        return re.search('#[0-9a-f]{6}', self.hcl) is not None
+    
+    def is_valid_eye(self) -> bool:
+        colors = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
+        return colors.count(self.ecl) > 0
+
+    def is_valid_pid(self) -> bool:
+        return re.search(r'^\d{9}$', self.pid) is not None
 
     def is_valid(self) -> bool:
-       return self.is_valid_years() 
+       validators = [self.is_valid_years, 
+                     self.is_valid_height, 
+                     self.is_valid_hair, 
+                     self.is_valid_eye, 
+                     self.is_valid_pid]
+       return all(list(map(lambda x: x(), validators)))
 
 def combine_passport_lines(raw_lines: List[str]) -> List[str]:
     #todo : there is surely an easier way to do this
@@ -81,7 +105,7 @@ def determine_valid_passport(passport: Passport) -> bool:
     return valid
 
 
-passports_required_fields, invalid = parse_input('test.txt')
+passports_required_fields, invalid = parse_input('input.txt')
 print(f'Part 1: {str(len(passports_required_fields))}')
 passports = list(map(lambda p: p.is_valid(), passports_required_fields))
-print(f'Part 2: {str(len(passports))}')
+print(f'Part 2: {str(len(list(filter(None, passports))))}')
