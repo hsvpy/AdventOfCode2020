@@ -36,7 +36,7 @@ def follow_movements(instructions: List[str]) -> Tuple[int, int]:
                 amount -= 90
         elif direction == "R":
             if amount not in {0, 90, 180, 270}:
-                raise ValueError(f"unknown turn left amount {amount}")
+                raise ValueError(f"unknown turn right amount {amount}")
             while amount > 0:
                 heading *= -1j
                 amount -= 90
@@ -73,7 +73,7 @@ def follow_movements_part_two(instructions: List[str]) -> Tuple[int, int]:
                 amount -= 90
         elif direction == "R":
             if amount not in {0, 90, 180, 270}:
-                raise ValueError(f"unknown turn left amount {amount}")
+                raise ValueError(f"unknown turn right amount {amount}")
             while amount > 0:
                 waypoint *= -1j
                 amount -= 90
