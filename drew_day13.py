@@ -1,4 +1,4 @@
-"""Day 13: shutle search"""
+"""Day 13: shuttle search"""
 from typing import List, Tuple
 from functools import reduce
 
@@ -68,9 +68,9 @@ def part_two(delta_t_and_ids: List[Tuple[int, int]]) -> int:
     t ≡ -7 (mod 19)
     """
 
-    n_s = [0 - i[0] for i in delta_t_and_ids]
-    a_s = [i[1] for i in delta_t_and_ids]
-    return chinese_remainder(a_s, n_s)
+    a_s = [0 - i[0] for i in delta_t_and_ids]
+    n_s = [i[1] for i in delta_t_and_ids]
+    return chinese_remainder(a=a_s, n=n_s)
 
 
 assert part_one(EARLIEST_TIMESTAMP, IDS) == 295
