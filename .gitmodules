@@ -1,0 +1,3 @@
+[submodule ".addyess-aoc"]
+	path = .addyess-aoc
+	url = https://github.com/addyess/aoc.git
