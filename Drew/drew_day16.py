@@ -82,7 +82,9 @@ def part_two(puzzle_input: str) -> int:
     rules = puzzle["rules"]
     other_tickets = puzzle["nearby tickets"]
     valid_tickets = [
-        ticket for ticket in other_tickets if not get_invalid_value(ticket, rules)
+        ticket
+        for ticket in other_tickets
+        if 0 not in ticket and not get_invalid_value(ticket, rules)
     ]
     values_by_field = []
     # think of this as a very ugly means of transposing a table
