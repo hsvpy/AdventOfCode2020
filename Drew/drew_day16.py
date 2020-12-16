@@ -102,9 +102,6 @@ def part_two(puzzle_input: str) -> int:
             del field_map[field_name]
     result = 1
     while field_map:
-        # NOTE this runs indefinitely on mine. Let's just keep going until we get our 6
-        # departure fields isolated
-
         # what we're doing is looping through each field to see if we have isolated the candidate
         # field indexes down to one value
 
@@ -140,6 +137,7 @@ def part_two(puzzle_input: str) -> int:
                 result *= puzzle["your ticket"][i]
             return result
 
+    # we only get here with the test input
     return result
 
 
