@@ -1,5 +1,5 @@
 """day 17: 3D game of life"""
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Union
 from collections import defaultdict
 
 
@@ -35,7 +35,7 @@ def next_state(
 
 
 def next_state_part_2(
-    coord: Tuple[int, int, int, int], grid: Dict[Tuple[int, int, int], bool]
+    coord: Tuple[int, int, int, int], grid: Dict[Tuple[int, int, int, int], bool]
 ) -> bool:
     """Apply rules in 4D space
 
@@ -59,7 +59,7 @@ def next_state_part_2(
 
 def parse_grid(
     puzzle_input: List[str], part_two: bool = False
-) -> Dict[Tuple[int, int, int], bool]:
+) -> Dict[Union[Tuple[int, int, int], Tuple[int, int, int, int]], bool]:
     """Convert the text grid into a 3D or 4D space"""
     grid = defaultdict(lambda: False)
     for y, line in enumerate(puzzle_input):
