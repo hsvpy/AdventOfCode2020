@@ -14,6 +14,7 @@ def circular_index_gen(start_index: int, size_of_circle: int, number: int):
         index += 1
 
 
+# Hindsight: should have used a deque w/ rotate for circular buffer
 def process(all_cups: List[int], current_index: int) -> (List[int], int):
 
     def circular_index(index: int) -> int:
