@@ -82,7 +82,9 @@ def part_two(puzzle_input: str) -> int:
     rules = puzzle["rules"]
     other_tickets = puzzle["nearby tickets"]
     valid_tickets = [
-        ticket for ticket in other_tickets if not get_invalid_value(ticket, rules)
+        ticket
+        for ticket in other_tickets
+        if 0 not in ticket and not get_invalid_value(ticket, rules)
     ]
     values_by_field = []
     # think of this as a very ugly means of transposing a table
@@ -94,16 +96,23 @@ def part_two(puzzle_input: str) -> int:
             if all(number_in_ranges(value, field_rules) for value in field_values):
                 field_map[field_name].append(field_index)
     definite_fields = {}
-    for field_name, field_index_candidates in field_map.items():
+    for field_name, field_index_candidates in list(field_map.items()):
         if len(field_index_candidates) == 1:
             definite_fields[field_name] = field_index_candidates[0]
+            del field_map[field_name]
     result = 1
     while field_map:
-        # NOTE this runs indefinitely on mine. Let's just keep going until we get our 6
-        # departure fields isolated
-
         # what we're doing is looping through each field to see if we have isolated the candidate
         # field indexes down to one value
+
+        # first, process singletons
+        for field_name, field_index_candidates in list(field_map.items()):
+            if len(field_index_candidates) == 1:
+                if len(field_index_candidates) == 1:
+                    # yay we've isolated one candidate
+                    definite_fields[field_name] = field_index_candidates[0]
+                    del field_map[field_name]
+        # then do the rest
         for field_name, field_index_candidates in list(field_map.items()):
             if field_name in definite_fields:
                 # we've already matched it. Kill it.
@@ -115,9 +124,9 @@ def part_two(puzzle_input: str) -> int:
                     field_index_candidates.remove(value)
                 except ValueError:
                     pass
-            if len(field_index_candidates) == 1:
-                # yay we've isolated one candidate
-                definite_fields[field_name] = field_index_candidates[0]
+            if not field_index_candidates:
+                raise ValueError(f"No viable candidates for {field_name}")
+
         # by some miracle, have we gotten our 6?
         departure_values = list(
             val for key, val in definite_fields.items() if key.startswith("departure")
@@ -128,6 +137,7 @@ def part_two(puzzle_input: str) -> int:
                 result *= puzzle["your ticket"][i]
             return result
 
+    # we only get here with the test input
     return result
 
 
